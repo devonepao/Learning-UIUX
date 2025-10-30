@@ -2,66 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Virtual Wallet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Apple Wallet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wallet-container">
-        <div class="card-stack">
-            <div class="card starbucks">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="starbucks-logo.png" alt="Starbucks" class="logo">
+        <!-- Header -->
+        <header class="wallet-header">
+            <div class="header-title">Wallet</div>
+            <button class="header-button add-button" aria-label="Add card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Cards Container -->
+        <div class="cards-wrapper">
+            <div class="card-stack" id="cardStack">
+                <!-- Card 1: American Express -->
+                <div class="card amex" data-index="0" tabindex="0">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-chip">
+                            <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+                                <rect width="40" height="32" rx="4" fill="#FFD700" opacity="0.3"/>
+                                <circle cx="10" cy="10" r="2" fill="#FFD700"/>
+                                <circle cx="20" cy="10" r="2" fill="#FFD700"/>
+                                <circle cx="30" cy="10" r="2" fill="#FFD700"/>
+                                <circle cx="10" cy="20" r="2" fill="#FFD700"/>
+                                <circle cx="20" cy="20" r="2" fill="#FFD700"/>
+                                <circle cx="30" cy="20" r="2" fill="#FFD700"/>
+                            </svg>
+                        </div>
+                        <div class="card-logo">
+                            <span class="logo-text">AMEX</span>
+                        </div>
                         <div class="card-details">
-                            <span class="card-name">Starbucks Card</span>
-                            <span class="card-balance">$25.00</span>
+                            <div class="card-number">•••• •••• •••• 7392</div>
+                            <div class="card-holder">
+                                <div class="detail-label">CARDHOLDER</div>
+                                <div class="detail-value">HARSHIT YADAV</div>
+                            </div>
+                            <div class="card-expiry">
+                                <div class="detail-label">VALID THRU</div>
+                                <div class="detail-value">12/28</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">American Express</div>
+                    </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Card 2: Starbucks -->
+                <div class="card starbucks" data-index="1" tabindex="0">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-logo">
+                            <span class="logo-text">★</span>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-number">Starbucks Card</div>
+                            <div class="card-holder">
+                                <div class="detail-label">BALANCE</div>
+                                <div class="detail-value">$45.62</div>
+                            </div>
+                            <div class="card-expiry">
+                                <div class="detail-label">MEMBER SINCE</div>
+                                <div class="detail-value">2020</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="barcode-text">••••••••••••••••</div>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="magnetic-stripe"></div>
-                        <div class="signature">
-                            <span>Signature</span>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Card 3: SpaceX -->
+                <div class="card spacex" data-index="2" tabindex="0">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-logo">
+                            <span class="logo-text">✦</span>
                         </div>
+                        <div class="card-details">
+                            <div class="card-number">SpaceX Launch Pass</div>
+                            <div class="card-holder">
+                                <div class="detail-label">STARSHIP ID</div>
+                                <div class="detail-value">SX-2025-001</div>
+                            </div>
+                            <div class="card-expiry">
+                                <div class="detail-label">ACCESS LEVEL</div>
+                                <div class="detail-value">PREMIUM</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">Starship Launch Facility</div>
                     </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Card 4: Skynet -->
+                <div class="card skynet" data-index="3" tabindex="0">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-logo">
+                            <span class="logo-text">◆</span>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-number">Skynet Access Card</div>
+                            <div class="card-holder">
+                                <div class="detail-label">USER ID</div>
+                                <div class="detail-value">YADAV_001</div>
+                            </div>
+                            <div class="card-expiry">
+                                <div class="detail-label">CLEARANCE</div>
+                                <div class="detail-value">LEVEL 5</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">Cyberdyne Systems</div>
+                    </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Card 5: Costco -->
+                <div class="card costco" data-index="4" tabindex="0">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-logo">
+                            <span class="logo-text">C</span>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-number">Costco Membership</div>
+                            <div class="card-holder">
+                                <div class="detail-label">MEMBER NUMBER</div>
+                                <div class="detail-value">••••••••••••••••</div>
+                            </div>
+                            <div class="card-expiry">
+                                <div class="detail-label">VALID THRU</div>
+                                <div class="detail-value">09/26</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">Costco Wholesale</div>
+                    </div>
+                    <div class="card-shine"></div>
                 </div>
             </div>
-            <div class="card costco">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="costco-logo.png" alt="Costco" class="logo">
-                        <div class="card-details">
-                            <span class="card-name">Costco Membership</span>
-                            <span class="card-number">**** **** **** 1234</span>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <div class="magnetic-stripe"></div>
-                        <div class="signature">
-                            <span>Signature</span>
-                        </div>
-                    </div>
+        </div>
+
+        <!-- Card Indicators (Dots) -->
+        <div class="card-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+            <div class="indicator" data-index="3"></div>
+            <div class="indicator" data-index="4"></div>
+        </div>
+
+        <!-- Card Details Panel -->
+        <div class="card-details-panel">
+            <div class="panel-content">
+                <div class="panel-header">
+                    <h3 class="panel-title">Card Details</h3>
+                    <button class="panel-close" aria-label="Close details">✕</button>
                 </div>
-            </div>
-            <div class="card credit-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="card-chip"></div>
-                        <div class="card-details">
-                            <span class="card-name">Credit Card</span>
-                            <span class="card-number">**** **** **** 5678</span>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <div class="magnetic-stripe"></div>
-                        <div class="signature">
-                            <span>Signature</span>
-                        </div>
-                    </div>
+                <div class="panel-body" id="panelBody">
+                    <!-- Details populated by JavaScript -->
                 </div>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
