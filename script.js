@@ -37,24 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const handleScroll = (e) => {
-        const delta = Math.sign(e.deltaY || e.touches[0].clientY - startY);
+    const handleWheel = (e) => {
+        const delta = Math.sign(e.deltaY);
         if (delta > 0) {
-            activeCardIndex = Math.max(0, activeCardIndex - 1);
-        } else {
             activeCardIndex = Math.min(cards.length - 1, activeCardIndex + 1);
+        } else {
+            activeCardIndex = Math.max(0, activeCardIndex - 1);
         }
         updateCards();
     };
 
-    window.addEventListener('wheel', throttle(handleScroll, 500));
+    window.addEventListener('wheel', throttle(handleWheel, 200));
 
     let startY = 0;
+    let endY = 0;
+
     window.addEventListener('touchstart', (e) => {
         startY = e.touches[0].clientY;
     });
 
-    window.addEventListener('touchmove', throttle(handleScroll, 500));
+    window.addEventListener('touchmove', (e) => {
+        endY = e.touches[0].clientY;
+    });
+
+    window.addEventListener('touchend', () => {
+        const delta = startY - endY;
+        if (Math.abs(delta) > 50) { // Threshold to prevent accidental swipes
+            if (delta > 0) {
+                activeCardIndex = Math.min(cards.length - 1, activeCardIndex + 1);
+            } else {
+                activeCardIndex = Math.max(0, activeCardIndex - 1);
+            }
+            updateCards();
+        }
+    });
 
     updateCards();
 });
