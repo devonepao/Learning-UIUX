@@ -1,8 +1,11 @@
+/* Samsung Wallet Clone - Modern UI */
+
 * {
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -11,13 +14,12 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #ffffff;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Samsung One', 'Samsung Sharp Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     background: #ffffff;
-    color: #000;
+    color: #1a1a1a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,108 +37,169 @@ body {
     overflow: hidden;
 }
 
-/* Header */
+/* Header - Samsung Style */
 .wallet-header {
-    height: 56px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 20px;
     background: #ffffff;
-    border-bottom: 1px solid #e5e5e7;
-    z-index: 10;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .header-title {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .header-button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
     border: none;
     background: transparent;
-    color: #007AFF;
+    color: #1a1a1a;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    -webkit-appearance: none;
-    appearance: none;
 }
 
 .header-button:active {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.05);
     transform: scale(0.95);
+}
+
+/* Quick Access Section */
+.quick-access {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quick-access-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-access-btn:active {
+    background: #f5f5f5;
+    transform: scale(0.98);
+}
+
+.quick-access-btn svg {
+    stroke: #1a1a1a;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    background: #ffffff;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.category-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.category-tab {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.category-tab.active {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: #ffffff;
+}
+
+.category-tab:not(.active):active {
+    background: #f5f5f5;
 }
 
 /* Cards Wrapper */
 .cards-wrapper {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 40px;
-    padding-bottom: 100px;
-    position: relative;
-    overflow: visible;
-    scroll-behavior: smooth;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background: #ffffff;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 /* Card Stack */
 .card-stack {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 360px;
-    perspective: 1200px;
-    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 100px;
 }
 
-/* Card Styling */
+/* Card Styling - Samsung Style */
 .card {
-    position: absolute;
     width: 100%;
-    height: 216px;
-    border-radius: 16px;
-    padding: 16px;
-    box-sizing: border-box;
+    min-height: 200px;
+    border-radius: 20px;
+    padding: 20px;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-style: preserve-3d;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    outline: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+    position: relative;
     overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-.card:focus-visible {
-    outline: 2px solid #007AFF;
-    outline-offset: 4px;
 }
 
 .card:active {
     transform: scale(0.98);
-}
-
-.card-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    z-index: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .card-content {
@@ -148,24 +211,30 @@ body {
     z-index: 1;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
 .card-chip {
-    align-self: flex-start;
-    margin-bottom: 8px;
+    opacity: 0.9;
 }
 
 .card-logo {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
-.card-details {
+.card-body {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -173,173 +242,125 @@ body {
 }
 
 .card-number {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 2px;
-    margin-bottom: 16px;
-    opacity: 0.9;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-.card-holder, .card-expiry {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.membership-name {
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 4px;
 }
 
-.detail-label {
+.membership-tier {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 16px;
+}
+
+.card-info {
+    display: flex;
+    gap: 32px;
+    margin-top: auto;
+}
+
+.card-holder,
+.card-expiry {
+    flex: 1;
+}
+
+.info-label {
     font-size: 10px;
-    letter-spacing: 1.2px;
-    opacity: 0.7;
-    font-weight: 500;
-}
-
-.detail-value {
-    font-size: 12px;
-    font-weight: 600;
     letter-spacing: 0.5px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+    text-transform: uppercase;
 }
 
-.card-footer {
-    font-size: 12px;
-    margin-top: 12px;
-    opacity: 0.85;
-    font-weight: 500;
+.info-value {
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.barcode-text {
-    font-size: 20px;
-    letter-spacing: 4px;
-    font-weight: 300;
-}
-
-.card-shine {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0) 50%
-    );
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* Card Color Variants - Light Theme */
-.card.amex {
+/* Card Color Variants - Samsung Wallet Style */
+.payment-card.amex {
     background: linear-gradient(135deg, #006FCF 0%, #0051BA 100%);
     color: #ffffff;
 }
 
-.card.starbucks {
+.payment-card.samsung-card {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #ffffff;
+}
+
+.membership-card.starbucks {
     background: linear-gradient(135deg, #00704A 0%, #00582E 100%);
     color: #ffffff;
 }
 
-.card.spacex {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    color: #ffffff;
-}
-
-.card.skynet {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #00ff88;
-}
-
-.card.costco {
+.membership-card.costco {
     background: linear-gradient(135deg, #E4002B 0%, #B80020 100%);
     color: #ffffff;
 }
 
-/* Card Animations - Apple Wallet Stack Effect */
-.card[data-position="0"] {
-    transform: translateY(0px) translateZ(0px) rotateX(0deg) scale(1);
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 100;
+.transport-card.metro {
+    background: linear-gradient(135deg, #5E35B1 0%, #311B92 100%);
+    color: #ffffff;
 }
 
-.card[data-position="1"] {
-    transform: translateY(16px) translateZ(-40px) rotateX(4deg) scale(0.98);
-    opacity: 0.95;
-    pointer-events: none;
-    z-index: 80;
+/* Samsung Logo Styling */
+.samsung-logo text {
+    font-family: 'Samsung Sharp Sans', sans-serif;
+    font-weight: bold;
 }
 
-.card[data-position="2"] {
-    transform: translateY(32px) translateZ(-80px) rotateX(8deg) scale(0.96);
-    opacity: 0.90;
-    pointer-events: none;
-    z-index: 60;
+.contactless-icon {
+    opacity: 0.9;
 }
 
-.card[data-position="3"] {
-    transform: translateY(48px) translateZ(-120px) rotateX(12deg) scale(0.94);
-    opacity: 0.85;
-    pointer-events: none;
-    z-index: 40;
+/* Barcode Styling */
+.barcode {
+    margin-top: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
-.card[data-position="4"] {
-    transform: translateY(64px) translateZ(-160px) rotateX(16deg) scale(0.92);
-    opacity: 0.80;
-    pointer-events: none;
-    z-index: 20;
-}
-
-/* Card Indicators */
-.card-indicators {
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
+.barcode-lines {
     display: flex;
-    gap: 8px;
-    z-index: 20;
+    gap: 3px;
+    justify-content: center;
 }
 
-.indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #d1d1d6;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    padding: 0;
-    -webkit-appearance: none;
-    appearance: none;
+.barcode-lines span {
+    width: 2px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    display: inline-block;
 }
 
-.indicator.active {
-    background: #007AFF;
-    width: 24px;
-    border-radius: 4px;
+.barcode-lines span:nth-child(odd) {
+    width: 3px;
 }
 
-.indicator:active {
-    transform: scale(1.1);
-}
-
-/* Details Panel */
+/* Details Panel - Samsung Style */
 .card-details-panel {
     position: fixed;
-    bottom: -400px;
+    bottom: -100%;
     left: 0;
     right: 0;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
     background: #ffffff;
-    border-radius: 16px 16px 0 0;
-    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    max-height: 80vh;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 70vh;
     overflow-y: auto;
-    z-index: 30;
+    z-index: 200;
 }
 
 .card-details-panel.open {
@@ -347,51 +368,63 @@ body {
 }
 
 .panel-content {
-    padding: 20px 16px 32px;
+    padding: 24px 20px 32px;
 }
 
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
-.panel-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    color: #000;
+.panel-drag-handle {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #d0d0d0;
+    border-radius: 2px;
 }
 
 .panel-close {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border: none;
-    background: transparent;
-    font-size: 20px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 18px;
     cursor: pointer;
-    color: #999;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.2s ease;
-    -webkit-appearance: none;
-    appearance: none;
+    margin-left: auto;
 }
 
 .panel-close:active {
-    background: rgba(0, 0, 0, 0.04);
+    background: #f5f5f5;
     transform: scale(0.95);
+}
+
+.panel-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #1a1a1a;
 }
 
 .panel-body {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
 }
 
 .detail-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #e5e5e7;
+    padding: 16px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .detail-item:last-child {
@@ -399,46 +432,80 @@ body {
 }
 
 .detail-item-label {
-    font-size: 12px;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
 .detail-item-value {
-    font-size: 16px;
-    color: #000;
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Bottom Navigation - Samsung Style */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 68px;
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 150;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.2s ease;
+    padding: 8px;
+}
+
+.nav-item.active {
+    color: #1a73e8;
+}
+
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-item span {
+    font-size: 11px;
     font-weight: 500;
 }
 
-/* Swipe Hint */
-.swipe-hint {
-    position: fixed;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: #999;
-    opacity: 0;
-    animation: fadeInOut 3s ease-in-out;
+.nav-item:active {
+    transform: scale(0.95);
 }
 
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Touch Feedback */
+/* Responsive Adjustments */
 @media (max-width: 480px) {
     .wallet-container {
         max-width: 100%;
     }
 
-    .card-stack {
-        max-width: none;
+    .header-title {
+        font-size: 22px;
+    }
+
+    .card {
+        min-height: 190px;
     }
 }
 
@@ -446,53 +513,85 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .card,
     .card-details-panel,
-    .indicator,
-    .header-button {
+    .category-tab,
+    .header-button,
+    .nav-item {
         transition: none;
     }
 }
 
-/* Dark Mode Support - Force Light Theme */
+/* Light/Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     body {
-        background: #ffffff !important;
-        color: #000 !important;
+        background: #1a1a1a;
     }
 
     .wallet-container {
-        background: #ffffff !important;
+        background: #1a1a1a;
     }
 
-    .wallet-header {
-        background: #ffffff !important;
-        border-bottom-color: #e5e5e7 !important;
+    .wallet-header,
+    .quick-access,
+    .category-tabs {
+        background: #2a2a2a;
+        border-bottom-color: #3a3a3a;
     }
 
-    .card-details-panel {
-        background: #ffffff !important;
+    .header-title,
+    .header-button {
+        color: #ffffff;
     }
 
-    .panel-title {
-        color: #000 !important;
+    .quick-access-btn {
+        background: #3a3a3a;
+        color: #ffffff;
+    }
+
+    .quick-access-btn:active {
+        background: #4a4a4a;
+    }
+
+    .quick-access-btn svg {
+        stroke: #ffffff;
+    }
+
+    .category-tab {
+        border-color: #3a3a3a;
+        color: #999;
+    }
+
+    .category-tab:not(.active):active {
+        background: #3a3a3a;
+    }
+
+    .card-details-panel,
+    .bottom-nav {
+        background: #2a2a2a;
+        border-top-color: #3a3a3a;
+    }
+
+    .panel-title,
+    .detail-item-value {
+        color: #ffffff;
+    }
+
+    .panel-close {
+        background: #3a3a3a;
+    }
+
+    .panel-close:active {
+        background: #4a4a4a;
     }
 
     .detail-item {
-        border-bottom-color: #e5e5e7 !important;
+        border-bottom-color: #3a3a3a;
     }
 
     .detail-item-label {
-        color: #999 !important;
+        color: #999;
     }
 
-    .detail-item-value {
-        color: #000 !important;
-    }
-
-    .indicator {
-        background: #d1d1d6 !important;
-    }
-
-    .header-button {
-        color: #007AFF !important;
+    .panel-drag-handle {
+        background: #4a4a4a;
     }
 }
