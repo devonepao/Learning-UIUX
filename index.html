@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Virtual Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wallet-container">
+        <div class="card-stack">
+            <div class="card starbucks">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="starbucks-logo.png" alt="Starbucks" class="logo">
+                        <div class="card-details">
+                            <span class="card-name">Starbucks Card</span>
+                            <span class="card-balance">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="magnetic-stripe"></div>
+                        <div class="signature">
+                            <span>Signature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card costco">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="costco-logo.png" alt="Costco" class="logo">
+                        <div class="card-details">
+                            <span class="card-name">Costco Membership</span>
+                            <span class="card-number">**** **** **** 1234</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="magnetic-stripe"></div>
+                        <div class="signature">
+                            <span>Signature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card credit-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-chip"></div>
+                        <div class="card-details">
+                            <span class="card-name">Credit Card</span>
+                            <span class="card-number">**** **** **** 5678</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="magnetic-stripe"></div>
+                        <div class="signature">
+                            <span>Signature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
